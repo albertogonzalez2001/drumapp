@@ -1,3 +1,7 @@
+/*
+1. VARIABLES Y CONFIGURACIÓN RAIZ (:root)
+*/
+
 :root {
   --bg: #14232b;
   --surface: #1e3340;
@@ -7,30 +11,165 @@
   --hoop: #d1495b;
   color-scheme: dark;
 }
-* { box-sizing: border-box; }
-html, body { margin: 0; background: var(--bg); color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-.app { max-width: 480px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem;
+
+/*
+2. RESET / NORMALIZAR ESTILOS
+*/
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/*
+3. COMPONENTES REUTILIZABLES Y SECCIONES ESPECIFICAS
+*/
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
   padding-top: max(1.5rem, env(safe-area-inset-top));
-  padding-bottom: max(3rem, env(safe-area-inset-bottom)); }
-h1 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem; color: var(--muted); }
-.display { display: flex; align-items: baseline; justify-content: center; gap: .5rem; }
-.bpm { font-size: 5.5rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
-.unit { color: var(--muted); }
-.beats { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; margin: 1.25rem 0; min-height: 2.2rem; }
-.beat { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--surface); border: 2px solid transparent; }
-.beat.first { border-color: var(--hoop); }
-.beat.on { background: var(--brass); }
-.beat.on.first { background: var(--hoop); }
-.beat.muted.on { background: transparent; border-style: dashed; border-color: var(--muted); }
-input[type="range"] { width: 100%; accent-color: var(--brass); }
-.play { width: 100%; margin: 1.25rem 0; padding: 1rem; font-size: 1.2rem; font-weight: 600;
-  border: 0; border-radius: 12px; background: var(--brass); color: #1b1405; cursor: pointer; }
-.play:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .75rem; }
-label { display: flex; flex-direction: column; gap: .3rem; font-size: .9rem; color: var(--muted); }
-select, input[type="number"] { padding: .6rem; border-radius: 8px; border: 1px solid #365266;
-  background: var(--surface); color: var(--text); font-size: 1rem; }
-fieldset { margin: 1.25rem 0 0; padding: 1rem; border: 1px solid #365266; border-radius: 12px; }
-legend { padding: 0 .4rem; color: var(--text); font-weight: 600; }
-.check { flex-direction: row; align-items: center; gap: .5rem; margin-bottom: .75rem; color: var(--text); }
+  padding-bottom: max(3rem, env(safe-area-inset-bottom));
+}
+
+h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bpm {
+  font-size: 5.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.unit {
+  color: var(--muted);
+}
+
+.beats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.25rem 0;
+  min-height: 2.2rem;
+}
+
+.beat {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid transparent;
+}
+
+.beat.first {
+  border-color: var(--hoop);
+}
+
+.beat.on {
+  background: var(--brass);
+}
+
+.beat.on.first {
+  background: var(--hoop);
+}
+
+.beat.muted.on {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--muted);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--brass);
+}
+
+.play {
+  width: 100%;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 12px;
+  background: var(--brass);
+  color: #1b1405;
+  cursor: pointer;
+}
+
+.play:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+select,
+input[type="number"] {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #365266;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+fieldset {
+  margin: 1.25rem 0 0;
+  padding: 1rem;
+  border: 1px solid #365266;
+  border-radius: 12px;
+}
+
+legend {
+  padding: 0 0.4rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}

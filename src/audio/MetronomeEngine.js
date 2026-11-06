@@ -64,6 +64,7 @@ export class MetronomeEngine {
     this.timer = null;
   }
 
+  //Funciones privadas
   #scheduler() {
     while (this.nextTime < this.ctx.currentTime + SCHEDULE_AHEAD_S) {
       this.#scheduleStep(this.nextTime);
